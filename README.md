@@ -27,6 +27,7 @@ These informations will be used when creating the connection to the database for
 - connection class.
 - Validator Class added.
 - Started using MVC model (but probably not that well yet).
+- It's ugly, but it works.
 
 
 
