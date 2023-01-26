@@ -10,10 +10,6 @@ function add_user(){
     $user = new client_validator($_POST);
     $errors = $user->validate_user();
 
-    var_dump($errors);
-
-    var_dump($_POST);
-
     if(count($errors) == 0){
     
     $bdd = new DbConnect();
@@ -95,7 +91,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <title>Ajouter un client</title>
     <link rel="stylesheet" href="../public/assets/scss/style.css">
 </head>
-<body>
+<body><header><a href="../public/index.php">Home</a></header>
 <h1>Ajouter un nouveau client</h1>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
         <div><label for="lastName">Nom:</label>

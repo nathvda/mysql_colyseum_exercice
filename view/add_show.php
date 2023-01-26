@@ -11,10 +11,6 @@ function add_show(){
     $user = new show_validator($_POST);
     $errors = $user->validate_show();
 
-    var_dump($errors);
-
-    var_dump($_POST);
-
     if(count($errors) == 0){
     
     $bdd = new DbConnect();
@@ -24,20 +20,21 @@ function add_show(){
 
     $bdd->beginTransaction();
     
-
-    $sql1 = "INSERT INTO shows (title, performer, date, showTypesId, firstGenreId, secondGenreId, duration, startTime) VALUES (:title, :performer, :date, :showType, :firstGenre, :secondGenre, :duration, :startTime)";
+    $sql1 = "INSERT INTO shows (title, performer, date, showTypesId, firstGenresId, secondGenreId, duration, startTime) VALUES (:title, :performer, :date, :showType, :firstGenre, :secondGenre, :duration, :startTime)";
 
     $prep1 = $bdd->prepare($sql1);
 
-    $prep1->bindParam(":title", $_POST['title']);
-    $prep1->bindParam(":performer", $_POST['performer']);
-    $prep1->bindParam(":date", $_POST['date']);
-    $prep1->bindParam(":showType", $_POST['showType']);
-    $prep1->bindParam(":firstGenre", $_POST['firstGenre']);
-    $prep1->bindParam(":secondGenre", $_POST['secondGenre']);
-    $prep1->bindParam(":duration", $_POST['duration']);
-    $prep1->bindParam(":startTime", $_POST['startTime']);
-    
+    $prep1->bindParam(':title', $_POST['title']);
+    $prep1->bindParam(':performer', $_POST['performer']);
+    $prep1->bindParam(':date', $_POST['date']);
+    $prep1->bindParam(':showType', $_POST['showType']);
+    $prep1->bindParam(':firstGenre', $_POST['firstGenre']);
+    $prep1->bindParam(':secondGenre', $_POST['secondGenre']);
+    $prep1->bindParam(':duration', $_POST['duration']);
+    $prep1->bindParam(':startTime', $_POST['startTime']);
+
+    $prep1->execute();
+
     $bdd->commit();
 
 } 
@@ -68,7 +65,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <title>Ajouter un nouveau spectacle</title>
     <link rel="stylesheet" href="../public/assets/scss/style.css">
 </head>
-<body>
+<body><header><a href="../public/index.php">Home</a></header>
 <h1>Ajouter un nouveau spectacle</h1>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
         <div><label for="title">Nom du spectacle:</label>
@@ -85,9 +82,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         <?php echo displaySelectGenres('secondGenre') ?></p></div>
 
         <div><label for="duration">Durée:</label>
-        <input type="text" name="duration" id="duration" value=""></div>
+        <input type="duration" name="duration" id="duration" value=""></div>
         <div><label for="startTime">Heure de début:</label>
-        <input type="text" name="startTime" id="startTime" value=""></div>
+        <input type="duration" name="startTime" id="startTime" value=""></div>
         <button type="submit" name="submit" value="submit">Ajouter un spectacle</button>
 </form>
 
