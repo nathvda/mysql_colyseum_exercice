@@ -77,8 +77,10 @@ function update_show(){
 } 
 
 catch (exception $e){
+    
     $bdd->rollback();
     echo "rolled back";
+
 }
 
 }

@@ -2,10 +2,9 @@
 session_start();
 
 if(!isset($_SESSION['logged_in']) OR empty($_SESSION['logged_in'])){
-    $_SESSION['logged_in'] = true;
+    $_SESSION['logged_in'] = false;
 }
 
-var_dump($_SESSION['logged_in']);
 
 require '../controller/sql_connect.php';
 
@@ -135,6 +134,8 @@ function joinAndDisplayAll($from,$where = NULL){
         
         $prep = $bdd->prepare($sql);
         $prep->execute();
+
+        echo "<div class='shows__wrapper'>";
         
         foreach ($prep->fetchAll(PDO::FETCH_ASSOC) as $enre){
             $id = $enre['id'];
@@ -143,18 +144,16 @@ function joinAndDisplayAll($from,$where = NULL){
             $date = $enre['date'];
             $startTime = $enre['startTime'];
 
-            echo "<i><a href='../view/update_show.php?id=$id'>$title</i></a> par <b>$performer</b>, le $date à $startTime";
-            echo '<br/>';
+            echo "<div class='card'><h3><a href='../view/update_show.php?id=$id'>$title</h3></a> par <b>$performer</b>, <span class='date'>$date</span> à $startTime</div>";
         }
+
+        echo "</div>";
 
         $bdd = "";
         
 }
 
-        echo "<h2>Scheduled shows</h2>";
-
-        displayshow('shows');
-
+        echo "";
 
         function displayFullClients($from){
 
@@ -214,15 +213,22 @@ function joinAndDisplayAll($from,$where = NULL){
 
     echo '<a href="../view/add_client.php">Ajouter un client</a>';
     echo '<a href="../view/add_show.php">Ajouter un spectacle</a>';
+    echo '<a href="../view/log_out.php">Me déconnecter</a>';
     } else { 
-    echo  '<a href="../log_in.php">Me connecter</a>';
+    echo  '<a href="../view/log_in.php">Me connecter</a>';
+    echo '<a href="../view/register_user.php">Créer un compte</a>';
     }
-
+    
     ?></nav>
+
+<header><h1>COLYSEUM THEATRE</h1></header>
+
+<section class='shows-section'><h2>Scheduled shows</h2>
 
     <?php displayShow('shows'); 
 
     ?>
+</section>
     
 </body>
 </html>
