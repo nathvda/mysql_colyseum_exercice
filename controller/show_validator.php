@@ -112,11 +112,11 @@ class show_validator{
 
 
     private function validate_duration(){
-        $val = htmlspecialchars(stripslashes(trim($this->data['duration'])));
+        $val = htmlspecialchars(trim($this->data['duration']));
         if (empty($val)){
             $this->add_error('duration', 'duration cannot be empty');
         } else {
-            if(!preg_match('/^[0-9]{2}:[0-9]{2}:[0-9]{2}$/', $val)){
+            if(!preg_match('/^\d{2}:\d{2}:\d{2}$/', $val)){
                 $this->add_error('duration', 'duration must be a digit');
             } else {
 
@@ -127,11 +127,11 @@ class show_validator{
         }
 
         private function validate_startTime(){
-            $val = htmlspecialchars(stripslashes(trim($this->data['startTime'])));
+            $val = htmlspecialchars(trim($this->data['startTime']));
             if (empty($val)){
                 $this->add_error('startTime', 'startTime cannot be empty');
             } else {
-                if(!preg_match('/^[0-9]{2}:[0-9]{2}:[0-9]{2}$/', $val)){
+                if(!preg_match('/^\d{2}:\d{2}:\d{2}$/', $val)){
                     $this->add_error('startTime', 'startTime must be a digit');
                 } else {
     
