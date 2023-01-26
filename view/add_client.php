@@ -93,7 +93,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 </head>
 <body><header><a href="../public/index.php">Home</a></header>
 <h1>Ajouter un nouveau client</h1>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+    <main>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
         <div><label for="lastName">Nom:</label>
         <input type="text" id="lastName" name="lastName"></div>
         <div><label for="firstName">Prénom:</label>
@@ -111,13 +112,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         <p><label for="famille">Famille Nombreuse</label>
         <input type="radio" name="cardType" id="famille" value="famille" ></p>
         <p><label for="etudiant">Etudiant</label>
-        <input type="radio" name="cardType" id="etudiant" value="etudiant"></div></p>
+        <input type="radio" name="cardType" id="etudiant" value="etudiant"></p>
         <p><label for="employe">Employé</label>
         <input type="radio" name="cardType" id="employe" value="employe"></div></p></div>
 
         <div><label for="cardNumber">Numéro de carte:</label>
         <input type="text" name="cardNumber" id="cardNumber" value="-"></div>
         <button type="submit" name="submit" value="submit">Ajouter un client</button>
+</main>
 </form>
 
 </body>

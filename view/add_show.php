@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 </head>
 <body><header><a href="../public/index.php">Home</a></header>
 <h1>Ajouter un nouveau spectacle</h1>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+    <main><form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
         <div><label for="title">Nom du spectacle:</label>
         <input type="text" id="title" name="title"></div>
         <div><label for="performer">Artiste:</label>
@@ -75,17 +75,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         <div><label for="date">Date:</label>
         <input type="date" id="date" name="date"></div>
         <div><p><label for="cardType">Type de spectacle: </label></p>
-        <?php include '../controller/get_all_showtypes.php'; echo displaySelectTypes('showType') ?></p></div>
+        <?php include '../controller/get_all_showtypes.php'; echo displaySelectTypes('showType') ?></div>
         <div><p><label for="cardType">Genre principal du spectacle: </label></p>
-        <?php include '../controller/get_all_genres.php'; echo displaySelectGenres('firstGenre') ?></p></div>
+        <?php include '../controller/get_all_genres.php'; echo displaySelectGenres('firstGenre') ?></div>
         <div><p><label for="cardType">Genre secondaire du spectacle: </label></p>
-        <?php echo displaySelectGenres('secondGenre') ?></p></div>
+        <?php echo displaySelectGenres('secondGenre') ?></div>
 
         <div><label for="duration">Durée:</label>
         <input type="duration" name="duration" id="duration" value=""></div>
         <div><label for="startTime">Heure de début:</label>
         <input type="duration" name="startTime" id="startTime" value=""></div>
         <button type="submit" name="submit" value="submit">Ajouter un spectacle</button>
+    </main> 
 </form>
 
 </body>
