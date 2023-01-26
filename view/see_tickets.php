@@ -74,7 +74,7 @@ $bdd = $bdd->connect();
 
     $prep->execute();
 
-    echo "suppression de la réservation $arg réussie<br/>";
+    echo "suppression de du ticket assignés à la réservation $arg réussie<br/>";
 }
 
     $bdd->commit();
