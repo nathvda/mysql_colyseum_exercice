@@ -41,9 +41,14 @@ $prep = $bdd->prepare($sql);
 $prep->execute();
 
 foreach ($prep->fetchAll(PDO::FETCH_ASSOC) as $enre){
-    foreach($enre as $enr){
+    
+    $id = $enre['id'];
 
+    foreach($enre as $enr){
+    echo "<a href='../view/update_client.php?id=$id'>";
     echo $enr;
+    echo "</a>";
+
 }
     echo '<br/>';
 }
@@ -124,7 +129,7 @@ function joinAndDisplayAll($from,$where = NULL){
         $bdd = new DbConnect();
         $bdd = $bdd->connect();
         
-        $sql = "SELECT title,performer,date,startTime FROM $from";
+        $sql = "SELECT id,title,performer,date,startTime FROM $from";
         
 
         
@@ -132,12 +137,13 @@ function joinAndDisplayAll($from,$where = NULL){
         $prep->execute();
         
         foreach ($prep->fetchAll(PDO::FETCH_ASSOC) as $enre){
+            $id = $enre['id'];
             $title = $enre['title'];
             $performer = $enre['performer'];
             $date = $enre['date'];
             $startTime = $enre['startTime'];
 
-            echo "<i>$title</i> par <b>$performer</b>, le $date à $startTime";
+            echo "<i><a href='../view/update_show.php?id=$id'>$title</i></a> par <b>$performer</b>, le $date à $startTime";
             echo '<br/>';
         }
 
