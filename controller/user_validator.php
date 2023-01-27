@@ -72,7 +72,7 @@ class user_validator{
         var_dump($this->data['password']);
         var_dump($infos[0]['password']);
 
-        if(sha1($this->data['password']) == $infos[0]['password']){
+        if(password_verify($this->data['password'], $infos[0]['password'])){
 
             $_SESSION['logged_in'] = true;
 
