@@ -10,8 +10,6 @@ if(isset($_GET['id'])){
     $id = intval($_POST['id']);
 }
 
-var_dump($_SESSION['logged_in']);
-
 function fetchUsers($table, $sessionName){
 
     $bdd = new DbConnect();
@@ -107,7 +105,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 <body><header><a href="../public/index.php">Home</a></header>
 <h1>Modifier un spectacle</h1>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-        <input type="number" name="id" value="<?php echo (isset($_POST['id'])) ? $_POST['id'] : $_GET['id'];?>">
+        <input style="display:none" type="number" name="id" value="<?php echo (isset($_POST['id'])) ? $_POST['id'] : $_GET['id'];?>">
         <div><label for="title">Nom du spectacle:</label>
         <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($_SESSION['showsfetched'][$id-1]['title']);?>"></div>
         <div><label for="performer">Artiste:</label>
