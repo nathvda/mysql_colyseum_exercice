@@ -17,21 +17,15 @@ h1::after {
 h1 {
 	font-size: 5rem;
 	font-family: "Playfair Display";
-	/* text-shadow: 0.2rem 0.2rem 0 var(--mainColor); */
 	clip-path: polygon(0 0, 100% 0, 100% 75%, 0 75%);
 	position: relative;
 }
 
-h2{
-    font-size:3rem;
-    font-family:'Playfair Display';
-}
-
 h2::after {
-	border: 0.1rem solid rgb(255, 255, 255);
+	border: 0.1rem solid rgb(223, 215, 193);
 	content: " ";
 	position: absolute;
-	bottom: 25%;
+	bottom: 20%;
 	left: 0;
 	right: 0;
 	height: 0px;
@@ -41,7 +35,7 @@ h2::after {
 h2 {
 	font-size: 5rem;
 	font-family: "Playfair Display";
-	/* text-shadow: 0.2rem 0.2rem 0 var(--mainColor); */
-	clip-path: polygon(0 0, 100% 0, 100% 75%, 0 75%);
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 75%);
+	clip-path: polygon(0 0, 100% 0, 100% 80%, 0 80%);
 	position: relative;
 }

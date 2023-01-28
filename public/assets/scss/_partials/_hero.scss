@@ -1,0 +1,29 @@
+.hero {
+	background-color: #202020;
+	height: 80vh;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	padding: 14em;
+}
+
+.hero h3::before {
+	content: 'A new culture';
+	display: block;
+	color: transparent;
+	position: absolute;
+	z-index: -1;
+	left: -0.4em;
+	top: -0.2em;
+	-webkit-text-stroke: 2px #464646;
+	font-family: lato;
+	text-transform: uppercase;
+	font-size: 0.7em;
+}
+
+.hero h3 {
+	color: var(--mainColor);
+	font-size: 96;
+	font-family: "Playfair Display";
+	position: relative;
+	z-index: 4;
+}

@@ -38,10 +38,10 @@ main {
         }
 
         button {
-            background-color: #930421;
+            background-color: var(--mainColor);
             border: 0;
             padding: 1em;
-            color: white;
+            color: #202020;
             border-radius: 0.6em;
         }
 
