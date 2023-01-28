@@ -49,8 +49,6 @@ fetchBookings($_POST['delete']);
 
 function deleteEntries($args){
 
-    var_dump($args);
-
 $bdd = new DbConnect();
 $bdd = $bdd->connect();
 
@@ -59,8 +57,6 @@ $bdd = $bdd->connect();
     try{ 
 
     foreach($args as $arg){
-
-    var_dump($arg);
 
     $sql = "DELETE FROM bookings WHERE clientId = :arg";
     
