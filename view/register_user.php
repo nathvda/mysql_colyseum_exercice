@@ -7,9 +7,6 @@ function register(){
 
     $user = new user_register($_POST);
     $errors = $user->validate_login();
-    var_dump($errors);
-    
-
 
 }
 
