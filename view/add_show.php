@@ -4,8 +4,6 @@ require '../view/check_logged_in.php';
 require '../controller/show_validator.php';
 include '../controller/sql_connect.php';
 
-var_dump($_SESSION['logged_in']);
-
 function add_show(){
 
     $user = new show_validator($_POST);
