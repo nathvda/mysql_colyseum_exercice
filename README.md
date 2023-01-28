@@ -17,6 +17,9 @@ To use the forms, you will need a local server or a distant server. You can use 
 
 These informations will be used when creating the connection to the database for the CRUD operations.
 
+2023-01-28: 
+- Starting to refactor using Object Oriented PHP.
+
 2023-01-25:
 
 - Adding show.
