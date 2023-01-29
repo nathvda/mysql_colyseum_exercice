@@ -13,7 +13,6 @@ function fetchClient($id)
 
     $cli = new ClientsView();
     $cli = $cli->showClient($id);
-    var_dump($cli);
 
 }
 

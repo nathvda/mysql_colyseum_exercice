@@ -6,7 +6,6 @@ include '../validators/UserValidator.php';
 $user = new UserValidator($_POST);
 $user = $user->validate_login();
 
-var_dump($user);
 }
 
 log_in();

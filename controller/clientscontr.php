@@ -16,8 +16,6 @@ class Clientscontr extends Clients{
             $cli = new Clients();
             $cli->deleteClient($id);
 
-            var_dump($_SESSION['toDelete']);
-
         }
     }
 

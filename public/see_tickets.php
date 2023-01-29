@@ -8,7 +8,6 @@ if ($_POST['submit'] === 'search'){
 
     fetchTickets($_POST['delete']);
 
-    var_dump($_SESSION['toDelete']);
 }
 
 if ($_POST['submit'] === 'delete'){

@@ -59,11 +59,7 @@ class Users extends DbConnect {
 
             $prep->execute();
 
-            var_dump('done');
-
             } catch (exception $e){
-            
-            var_dump('rolling back');
             
             }
     }

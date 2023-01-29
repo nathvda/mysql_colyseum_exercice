@@ -6,8 +6,7 @@ if(isset($_POST['submit'])){
 if ($_POST['submit'] === 'search'){
 
     fetchClients($_POST['delete']);
-
-    var_dump($_SESSION['toDelete']);
+    
 }
 
 if ($_POST['submit'] === 'delete'){

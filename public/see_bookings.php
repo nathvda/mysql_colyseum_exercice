@@ -7,7 +7,6 @@ if ($_POST['submit'] === 'search'){
 
     fetchBookings($_POST['delete']);
 
-    var_dump($_SESSION['toDelete']);
 }
 
 if ($_POST['submit'] === 'delete'){
