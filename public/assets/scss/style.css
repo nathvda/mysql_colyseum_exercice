@@ -223,7 +223,7 @@ form div {
 .shows__wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1em;
+  gap: 3rem;
   width: 100%;
   margin: auto;
   place-items: center;
@@ -236,19 +236,20 @@ form div {
 .card {
   background-color: #282828;
   padding: 1em;
-  border-radius: 0.3em;
-  box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.5);
-  border: 1px solid #323232;
-  background-image: linear-gradient(45deg, #000, rgba(96, 87, 66, 0.2509803922));
+  border: 1px solid #3e3e3e;
   width: 100%;
-  height: 100%;
+  height: 99%;
   position: relative;
+  outline: 1px solid rgb(68, 68, 68);
+  outline-offset: 1rem;
+  box-shadow: #1c1c1c 1.5rem 1.5rem 0px;
 }
 .card h3, .card a {
   color: var(--mainColor);
   font-family: "Playfair Display";
   font-size: 3rem;
   letter-spacing: -2px;
+  line-height: 1;
 }
 .card .date {
   background-color: var(--mainColor);
@@ -259,6 +260,14 @@ form div {
   position: absolute;
   bottom: 1em;
   left: 1em;
+}
+.card .perf {
+  position: absolute;
+  bottom: 5rem;
+  right: 1em;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: -3px;
 }
 
 table {
