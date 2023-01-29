@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-
-
-
 function fetchBookings(){
 
     include '../view/bookingsview.php';
