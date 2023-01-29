@@ -24,13 +24,16 @@ These informations will be used when creating the connection to the database for
 - minor role manager (admin, moderator, member).
 - display of the admin dashboard.
 
+**Known issues** : Login is still causing some problems.
+
 2023-01-28: 
 - Starting to refactor using Object Oriented PHP.
 - Implementing Client creation.
 - Implementing Show display.
 - Navigation bar now updates on all pages.
 - Very small role gestion.
-Notes : * need to re-implement proper validation.
+
+**Known issues** : * need to re-implement proper validation.
 
 2023-01-25:
 
