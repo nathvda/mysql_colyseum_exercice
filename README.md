@@ -26,6 +26,7 @@ These informations will be used when creating the connection to the database for
 - Implementing Show display.
 - Navigation bar now updates on all pages.
 - Very small role gestion.
+Notes : * need to re-implement proper validation.
 
 2023-01-25:
 
