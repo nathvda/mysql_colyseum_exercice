@@ -58,5 +58,52 @@ class ClientsView extends Clients {
 
     }
 
+    public function showSelectedClients($ids){
+
+        foreach($ids as $id){
+
+        $bkgs = new Clients();
+        $result = $bkgs->getClient($id);
+
+        foreach($result as $res){
+            echo '<form>';
+
+    echo '<label id="id">Numéro client:</label>
+    <input type="text" value="';
+    echo $res['id'];
+    echo '">';
+    
+    echo '<label id="lastName">Nom:</label>
+    <input type="text" value="';
+    echo $res['lastName'];
+    echo '">';
+
+    echo '<label id="firstName">Prénom:</label>
+    <input type="text" value="';
+    echo $res['firstName'];
+    echo '">';
+
+    echo '<label id="birthDate">Date de naissance:</label>
+    <input type="date" value="';
+    echo $res['birthDate'];
+    echo '">';
+
+    echo '<label id="fidelityCard">Carte de fidélité:</label>
+    <input type="checkbox"';
+    echo ($res['card'] === 1) ? 'checked=checked' : '';
+    echo ">";
+
+    echo '<label id="cardNumber">Numéro de carte de fidélité:</label>
+    <input type="number" value="';
+    echo $res['cardNumber'];
+    echo '">';        
+    echo '</form>';
+        
+            $_SESSION['toDelete'][] = $res['id'];
+        }
+    }
+
+    }
+
 
 }

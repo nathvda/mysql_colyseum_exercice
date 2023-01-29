@@ -113,6 +113,20 @@ protected function getClient($id){
 
     }
 
+    /**
+     * Delete client from db.
+     */
+
+    protected function deleteClient($id){
+
+        $sql = "DELETE FROM clients WHERE id = ?";
+        
+        $stmt = $this->connect()->prepare($sql);
+
+        $stmt->execute([$id]);
+        
+    }
+
 
 
 }
