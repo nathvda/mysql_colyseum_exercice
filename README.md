@@ -4,7 +4,7 @@ Welcome to my repository, I am a junior web developer in training at Be/Code and
 
 ## Who Am I
 
-I'm a junior developer trying to get a good grip on php with projects and other things. I am currently in training at BeCode and do this as part of my training.
+I'm a junior developer trying to get a good grip on php with projects and other things. I am currently in training at BeCode and do this as part of my training. I will be trying to use Object Oriented PHP for this project as well as proper data validation. I wil also make use of sessions for logins and other interactions such as data modification and updates.
 
 ## How to use it ?
 
@@ -17,7 +17,9 @@ To use the forms, you will need a local server or a distant server. You can use 
 
 These informations will be used when creating the connection to the database for the CRUD operations.
 
-2023-01-29:
+## VERSIONS.
+
+2023-01-29 (latest) :
 - creation of admin dashboard.
 - reimplementation of validators.
 - styling the hero section.
@@ -46,6 +48,14 @@ These informations will be used when creating the connection to the database for
 - Validator Class added.
 - Started using MVC model (but probably not that well yet).
 - It's ugly, but it works.
+
+## ToDo
+
+- [ ] Improve admin dashboard.
+- [ ] Allow to search clients by name.
+- [ ] Allow to sort clients by name.
+- [ ] Allow to sort shows by genre.
+- [ ] Display genres.
 
 
 
