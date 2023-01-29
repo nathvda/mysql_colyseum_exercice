@@ -1,2 +1,2 @@
-import { menu_burger } from "./assets/scripts/modules/menu_burger.js";
+import { menuBurger } from "./modules/menu_burger.js";
 
