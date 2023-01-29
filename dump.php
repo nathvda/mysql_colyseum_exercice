@@ -4,7 +4,6 @@ function displayAll($from, $limit = NULL, $where = NULL, $offset = NULL)
 {
 
     $bdd = new DbConnect();
-    $bdd = $bdd->connect();
 
     $sql = "SELECT * FROM $from";
 
@@ -42,7 +41,6 @@ function joinAndDisplayAll($from, $where = NULL)
 {
 
     $bdd = new DbConnect();
-    $bdd = $bdd->connect();
 
     $sql = "SELECT * FROM $from INNER JOIN cards ON $from.cardNumber = cards.cardNumber";
 

@@ -17,8 +17,15 @@ To use the forms, you will need a local server or a distant server. You can use 
 
 These informations will be used when creating the connection to the database for the CRUD operations.
 
+2023-01-29:
+- creation of admin dashboard.
+
 2023-01-28: 
 - Starting to refactor using Object Oriented PHP.
+- Implementing Client creation.
+- Implementing Show display.
+- Navigation bar now updates on all pages.
+- Very small role gestion.
 
 2023-01-25:
 
