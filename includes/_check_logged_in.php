@@ -1,5 +1,4 @@
 <?php
-
 function check_logged_in(){
 
     if (!isset($_SESSION['user'])){
@@ -9,5 +8,3 @@ function check_logged_in(){
     }
 
 }
-
-?>

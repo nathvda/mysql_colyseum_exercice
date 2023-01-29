@@ -26,7 +26,7 @@ require '../dump.php';
                     error ducimus laboriosam facilis, mollitia impedit labore reprehenderit
                     accusantium, quisquam repudiandae sed? Saepe!
                 </div>
-                <div class="hero_image">
+                <div class="hero_image" id="heroimg">
                 <img src="./assets/images/theatre.webp" alt="theatre">
                 </div>
         </section>
