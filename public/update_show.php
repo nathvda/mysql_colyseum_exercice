@@ -12,8 +12,6 @@ function modifyShow($id){
     $sw = new Showsview();
     $sw = $sw->showShow($id);
 
-    var_dump($_SESSION['modifyShow']);
-
 }
 
 modifyShow($id);

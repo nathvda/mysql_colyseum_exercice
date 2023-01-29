@@ -6,6 +6,8 @@ function editingShow(){
     $sw = new ShowValidator($_POST);
     $sw = $sw->update_show();
 
+    var_dump($sw);
+
     if (count($sw) === 0){
         header('Location: ../public/index.php');
         exit();

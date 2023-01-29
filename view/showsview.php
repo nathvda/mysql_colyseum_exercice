@@ -17,7 +17,17 @@ class ShowsView extends Shows {
             $date = $enre['date'];
             $startTime = $enre['startTime'];
 
-            echo "<div class='card'><h3><a href='../public/update_show.php?id=$id'>$title</h3></a> par <b>$performer</b>, <span class='date'>$date</span> à $startTime</div>";
+            echo "<div class='card'><h3>";
+            
+            if(isset($_SESSION['role']) && $_SESSION['role'] < 2){
+            echo "<a href='../public/update_show.php?id=$id'>";
+            }
+            echo $title;
+            
+            if(isset($_SESSION['role']) && $_SESSION['role'] < 2){
+                echo "</a>";
+            }
+            echo "</h3><b class='perf'>$performer</b>, <span class='date'>$date</span> à $startTime</div>";
         }
 
         echo "</div>";

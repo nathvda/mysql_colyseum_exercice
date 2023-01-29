@@ -61,6 +61,8 @@ class ShowValidator{
         $show = new Showscontr();
         $show = $show->editShow($this->data);
 
+        return $this->errors;
+
         } else {
         return $this->errors;
         }
@@ -71,7 +73,7 @@ class ShowValidator{
         if (empty($val)){
             $this->add_error('title', 'title cannot be empty');
         } else {
-            if(!preg_match('/^[-\sa-zA-ZÁ-ù]*$/',$val)){
+            if(!preg_match('/^[-\sa-zA-ZÁ-ù:]*$/',$val)){
                 $this->add_error('title', 'title must be alphanumeric');
             } else {
                 $this->data['title'] = $val;
@@ -84,7 +86,7 @@ class ShowValidator{
         if (empty($val)){
             $this->add_error('performer', 'performer cannot be empty');
         } else {
-            if(!preg_match('/^[-\sa-zA-ZÀ-ù]*$/',$val)){
+            if(!preg_match('/^[-\sa-zA-ZÀ-ù:]*$/',$val)){
                 $this->add_error('performer', 'performer must be alphanumeric');
             } else {
                 $this->data['performer'] = $val;
