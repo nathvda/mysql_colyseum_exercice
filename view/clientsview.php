@@ -30,12 +30,12 @@ class ClientsView extends Clients {
             $cardNumber = $enre['cardNumber'];
 
                         if ($enre['card'] === 0 ){
-                            $card = "oui";
-                        } else {
                             $card = "non";
+                        } else {
+                            $card = "oui";
                         }
 
-            echo "<td><a href='../view/update_client.php?id=$id'><b>$lastName</b></a></td>
+            echo "<td><a href='../public/update_client.php?id=$id'><b>$lastName</b></a></td>
             <td><b>$firstName</b></td>
             <td><b>$birthDate</b></td>
             <td><b>$card</b></td>
@@ -54,7 +54,7 @@ class ClientsView extends Clients {
 
         $result = $this->getClient($id);
 
-        var_dump($result);
+        $_SESSION['modifyClient'] = $result;
 
     }
 

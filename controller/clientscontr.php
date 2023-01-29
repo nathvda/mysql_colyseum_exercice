@@ -21,4 +21,10 @@ class Clientscontr extends Clients{
         }
     }
 
+    public function editClient($data){
+
+        $this->modifyClient($data);
+        
+    }
+
 }

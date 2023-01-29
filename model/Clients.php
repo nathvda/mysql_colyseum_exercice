@@ -128,5 +128,75 @@ protected function getClient($id){
     }
 
 
+    protected function modifyClient($data){
+
+        $bdd = $this->connect();
+
+        $bdd->beginTransaction();
+
+        try {
+
+            
+
+        if ($data['fidelityCard'] == 1) {
+
+        $sql1 = "UPDATE clients
+        SET lastName = :lastName,
+        firstName = :firstName,
+        birthDate = :birthDate,
+        card = :fidelityCard,
+        cardNumber = :cardNumber 
+        WHERE id = :id";
+
+                $prep1 = $bdd->prepare($sql1);
+
+                $prep1->bindParam(':lastName', $data['lastName']);
+                $prep1->bindParam(':firstName', $data['firstName']);
+                $prep1->bindParam(':birthDate', $data['birthDate']);
+                $prep1->bindParam(':fidelityCard', $data['fidelityCard']);
+                $prep1->bindParam(':cardNumber', $data['cardNumber']);
+                $prep1->bindParam(':id', $id);
+
+                $id = intval($data['id']);
+
+                $prep1->execute();
+            } else {
+
+
+        $sql = "UPDATE clients 
+        SET lastName = :lastName,
+        firstName = :firstName,
+        birthDate = :birthDate,
+        card = :fidelityCard,
+        cardNumber = NULL
+        WHERE id = :id";
+
+                $stmt = $bdd->prepare($sql);
+
+                $stmt->bindParam(':lastName', $data['lastName']);
+                $stmt->bindParam(':firstName', $data['firstName']);
+                $stmt->bindParam(':birthDate', $data['birthDate']);
+                $stmt->bindParam(':fidelityCard', $data['fidelityCard']);
+                $stmt->bindParam(':id', $id);
+
+                $id = $data['id'];
+
+                $stmt->execute();
+            }
+
+            $bdd->commit();
+        } catch (exception $e) {
+
+            $bdd->rollback();
+            echo "rolled back down the moooountaiiiin<br/>
+    and fell into the seaaaaa it's an error you can seeee<br/>
+    and i'm losing my mind.<br/>
+    and this error will become longer<br/>
+    until I find a solution to this mess<br/>
+    Oh unbelievable distress<br/>";
+        }
+    }
+
+
 
 }
