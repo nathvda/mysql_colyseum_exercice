@@ -43,23 +43,23 @@ class ShowsView extends Shows {
 
 }
 
-public function showAllTypes($fieldname){
+    public function showAllTypes($fieldname){
 
-    $result = $this->getShowTypes();
+        $result = $this->getShowTypes();
 
-    echo "<select name='$fieldname'>";
+        echo "<select name='$fieldname'>";
 
-    foreach($result as $enre){
+        foreach($result as $enre){
 
-    $id = $enre['id'];
-    $type = $enre['type'];
+        $id = $enre['id'];
+        $type = $enre['type'];
 
-    echo "<option value='$id' name='$fieldname'>$type</option>";
+        echo "<option value='$id' name='$fieldname'>$type</option>";
+        }
+
+        echo "</select>";
+
     }
-
-    echo "</select>";
-
-}
 
 
 

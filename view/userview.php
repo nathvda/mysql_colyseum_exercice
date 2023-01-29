@@ -28,8 +28,18 @@ class Userview extends Users {
 
         }
 
+    }
 
+    public function showAllUsers(){
+        $result = $this->getAllUsers();
 
+        foreach($result as $res){
+            echo $res['id'];
+            echo '<br/>';
+            echo $res['username'];
+            echo '<br/>';
+            echo '<br/>';
+        }
     }
 
 
