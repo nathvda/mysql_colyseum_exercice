@@ -17,6 +17,7 @@
     <a href="./add_show.php">Ajouter une représentation</a>
     <a href="./see_clients.php">Voir les clients</a>
     <a href="./see_users.php">Voir les utilisateurs enregistrés</a>
+    <a href="./see_bookings.php">Voir les réservations</a>
 </main>
 </body>
 </html>
