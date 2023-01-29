@@ -15,7 +15,7 @@ class ClientsView extends Clients {
         <th>Prénom</th>
         <th>Date de naissance</th>
         <th>Carte de fidélité ?</th>
-        <th>CardNumber</th>
+        <th>Numéro de carte</th>
         </tr>
         </thead>';
 
@@ -27,13 +27,12 @@ class ClientsView extends Clients {
             $firstName = $enre['firstName'];
             $birthDate = $enre['birthDate'];
             $id = $enre['id'];
+            $cardNumber = $enre['cardNumber'];
 
-                if ($enre['card'] == 0 ){
+                        if ($enre['card'] === 0 ){
                             $card = "oui";
-                            $cardNumber = $enre['cardNumber'];
                         } else {
                             $card = "non";
-                            $cardNumber = "-";
                         }
 
             echo "<td><a href='../view/update_client.php?id=$id'><b>$lastName</b></a></td>
