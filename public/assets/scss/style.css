@@ -1,6 +1,7 @@
 @import url("./fonts/font-faces.scss");
 nav {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   left: 0;
   background: rgb(37, 37, 37);
@@ -106,10 +107,12 @@ main form button {
 
 .hero {
   background-color: #202020;
-  height: 80vh;
+  /* height: 80vh; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 14em;
+  padding: 17em;
+  gap: 5em;
+  background-image: url("../assets/svg/colyseum.svg");
 }
 
 .hero h3::before {
@@ -123,15 +126,41 @@ main form button {
   -webkit-text-stroke: 2px #464646;
   font-family: lato;
   text-transform: uppercase;
-  font-size: 0.7em;
+  font-size: 1.1em;
 }
 
 .hero h3 {
   color: var(--mainColor);
-  font-size: 96;
+  font-size: 4.7em;
   font-family: "Playfair Display";
   position: relative;
   z-index: 4;
+}
+
+.hero_text {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+.hero_image img {
+  width: 100%;
+  outline: 1px solid #efefef;
+  outline-offset: 1em;
+  border: 1px solid;
+  box-shadow: var(--mainColor) 2em 2em 0, #292929 -2em -2em 0;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dashboard a {
+  color: var(--mainColor);
 }
 
 * {
