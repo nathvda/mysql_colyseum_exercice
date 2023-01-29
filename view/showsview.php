@@ -25,6 +25,43 @@ class ShowsView extends Shows {
 
     }
 
+    public function showAllGenres($fieldname){
 
+        $result = $this->getShowGenres();
+
+        echo "<select name='$fieldname'>";
+
+        foreach($result as $enre){
+
+        $id = $enre['id'];
+        $genre = $enre['genre'];
+
+        echo "<option value='$id' name='$fieldname'>$genre</option>";
+        }
+
+        echo "</select>";
 
 }
+
+public function showAllTypes($fieldname){
+
+    $result = $this->getShowTypes();
+
+    echo "<select name='$fieldname'>";
+
+    foreach($result as $enre){
+
+    $id = $enre['id'];
+    $type = $enre['type'];
+
+    echo "<option value='$id' name='$fieldname'>$type</option>";
+    }
+
+    echo "</select>";
+
+}
+
+
+
+    }
+
