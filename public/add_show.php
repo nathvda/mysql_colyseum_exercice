@@ -2,6 +2,7 @@
 session_start();
 include '../includes/_check_logged_in.php';
 include '../includes/_get_all_genres.php';
+include '../view/showsview.php';
 ?>
 
 <!DOCTYPE html>

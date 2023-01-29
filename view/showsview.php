@@ -17,12 +17,10 @@ class ShowsView extends Shows {
             $date = $enre['date'];
             $startTime = $enre['startTime'];
 
-            echo "<div class='card'><h3><a href='../view/update_show.php?id=$id'>$title</h3></a> par <b>$performer</b>, <span class='date'>$date</span> à $startTime</div>";
+            echo "<div class='card'><h3><a href='../public/update_show.php?id=$id'>$title</h3></a> par <b>$performer</b>, <span class='date'>$date</span> à $startTime</div>";
         }
 
         echo "</div>";
-
-
     }
 
     public function showAllGenres($fieldname){
@@ -58,10 +56,15 @@ class ShowsView extends Shows {
         }
 
         echo "</select>";
-
     }
 
 
+    public function showShow($id){
+
+        $result = $this->getShow($id);
+
+        $_SESSION['modifyShow'] = $result;
+    }
 
     }
 

@@ -1,5 +1,4 @@
 <?php
-include '../view/showsview.php';
 
 function drop_list_genres($fieldname){
     $genres = new ShowsView();

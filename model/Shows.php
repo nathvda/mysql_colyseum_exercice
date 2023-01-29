@@ -22,6 +22,25 @@ class Shows extends DbConnect{
     }
 }
 
+protected function getShow($id){
+
+    try {
+        $sql = "SELECT * FROM shows WHERE id = ?";
+
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$id]);
+
+        $results = $stmt->fetchAll();
+
+        return $results;
+
+}  catch (Exception $e) {
+
+        echo 'couldnt connect to db';
+
+}
+}
+
     protected function getShowGenres(){
 
         try {
@@ -87,4 +106,45 @@ protected function addShow(){
     }
 }
 
+protected function modifyShow($data){
+
+    $bdd = $this->connect();
+
+    $bdd->beginTransaction();
+
+    try {
+    $sql = "UPDATE shows 
+    SET title = :title,
+    performer = :performer,
+    date  = :date,
+    showTypesId = :showType,
+    firstGenresId = :firstGenre,
+    secondGenreId = :secondGenre,
+    duration = :duration,
+    startTime = :startTime
+    WHERE id = :id";
+
+    $stmt = $bdd->prepare($sql);
+
+    $stmt->bindParam(':title', $data['title']);
+    $stmt->bindParam(':performer', $data['performer']);
+    $stmt->bindParam(':date', $data['date']);
+    $stmt->bindParam(':showType', $data['showType']);
+    $stmt->bindParam(':firstGenre', $data['firstGenre']);
+    $stmt->bindParam(':secondGenre', $data['secondGenre']);
+    $stmt->bindParam(':duration', $data['duration']);
+    $stmt->bindParam(':startTime', $data['startTime']);
+    $stmt->bindParam(':id', $data['id']);
+
+    $stmt->execute();
+
+    $bdd->commit();
+
+} catch (exception $e){
+
+    $bdd->rollback();
+    echo "rolling back";
+}
+
+}
 }

@@ -10,4 +10,10 @@ class Showscontr extends Shows{
         
     }
 
+    public function editShow($data){
+
+        $this->modifyShow($data);
+        
+    }
+
 }
