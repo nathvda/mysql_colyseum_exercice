@@ -1,5 +1,4 @@
 <?php session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +24,5 @@
 </html>
 
 <?php
-
 include '../includes/_check_logged_in.php';
 check_logged_in();

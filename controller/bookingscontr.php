@@ -13,4 +13,3 @@ class Bookingscontr extends Bookings{
 
     }
 }
-?>

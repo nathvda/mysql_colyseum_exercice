@@ -59,5 +59,3 @@ modifyShow($id);
 
 include '../includes/_check_logged_in.php';
 check_logged_in();
-
-?>

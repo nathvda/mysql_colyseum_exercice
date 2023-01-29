@@ -42,7 +42,5 @@ include '../view/showsview.php';
 </html>
 
 <?php
-
 check_logged_in();
 
-?>

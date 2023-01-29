@@ -120,8 +120,3 @@ class clientUpdaterValidator{
 
     }
 }
-
-
-
-
-?>

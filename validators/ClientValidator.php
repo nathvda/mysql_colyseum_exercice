@@ -138,8 +138,3 @@ class ClientValidator{
 
     }
 }
-
-
-
-
-?>

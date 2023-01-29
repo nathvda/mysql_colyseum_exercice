@@ -13,4 +13,3 @@ log_in();
 
     header('Location: ../public/index.php');
     exit();
-?>
