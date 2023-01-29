@@ -20,7 +20,6 @@ class ShowValidator{
             }
         }
 
-
         $this->validate_title();
         $this->validate_artist();
         $this->validate_date();
@@ -34,6 +33,33 @@ class ShowValidator{
         
         $show = new Showscontr();
         $show = $show->createShow($this->data);
+
+        } else {
+        return $this->errors;
+        }
+    }
+
+    public function update_show(){
+        foreach(self::$fields as $field){
+            if(!array_key_exists($field, $this->data)){
+                trigger_error("$field does not exist in data");
+                return;
+            }
+        }
+
+        $this->validate_title();
+        $this->validate_artist();
+        $this->validate_date();
+        $this->validate_showType();
+        $this->validate_firstGenre();
+        $this->validate_secondGenre();
+        $this->validate_duration();
+        $this->validate_startTime();
+
+        if (count($this->errors) === 0){
+        
+        $show = new Showscontr();
+        $show = $show->editShow($this->data);
 
         } else {
         return $this->errors;
