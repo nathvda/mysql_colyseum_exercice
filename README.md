@@ -19,6 +19,10 @@ These informations will be used when creating the connection to the database for
 
 2023-01-29:
 - creation of admin dashboard.
+- reimplementation of validators.
+- styling the hero section.
+- minor role manager (admin, moderator, member).
+- display of the admin dashboard.
 
 2023-01-28: 
 - Starting to refactor using Object Oriented PHP.
