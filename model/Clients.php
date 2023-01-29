@@ -1,8 +1,7 @@
 <?php
-include '../../model/Dbconnect.php';
+include '../model/Dbconnect.php';
 
 class Clients extends DbConnect{
-
 
     /**
      * Gets the list of all Clients
@@ -54,7 +53,7 @@ protected function getClient($id){
  *  Add one client to the db.
  */
 
-    protected function addClient($firstName, $lastName, $birthDate, $fidelityCard, $cardNumber, $cardType){
+    protected function addClient($lastName, $firstName, $birthDate, $fidelityCard, $cardNumber, $cardType){
 
         $bdd = $this->connect();
     
