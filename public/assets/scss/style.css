@@ -1,4 +1,3 @@
-@import url("./fonts/font-faces.scss");
 nav {
   position: -webkit-sticky;
   position: sticky;
@@ -112,7 +111,6 @@ main form button {
   grid-template-columns: repeat(2, 1fr);
   padding: 17em;
   gap: 5em;
-  background-image: url("../assets/svg/colyseum.svg");
 }
 
 .hero h3::before {
@@ -163,6 +161,14 @@ main form button {
   color: var(--mainColor);
 }
 
+@font-face {
+  font-family: Lato;
+  src: url("../../assets/fonts/Lato-Regular.ttf");
+}
+@font-face {
+  font-family: Playfair;
+  src: url("../../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf");
+}
 * {
   padding: 0;
   margin: 0;

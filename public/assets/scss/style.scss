@@ -4,7 +4,7 @@
 @use './_partials/hero';
 @use './_partials/dashboard';
 
-@import url('./fonts/font-faces.scss');
+@import './_partials/_font-faces.scss';
 
 *{
     padding:0;
