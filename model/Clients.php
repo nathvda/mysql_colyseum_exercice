@@ -1,7 +1,8 @@
 <?php
+namespace App\Clients;
 include '../model/Dbconnect.php';
 
-class Clients extends DbConnect{
+class Clients extends \DbConnect{
 
     /**
      * Gets the list of all Clients

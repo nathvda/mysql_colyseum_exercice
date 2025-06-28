@@ -1,7 +1,9 @@
 <?php
+namespace App\DbConnect;
+
 require __DIR__ . '/../vendor/autoload.php';
 
-Dotenv\Dotenv::createImmutable(__DIR__ . '/')->load();
+\Dotenv\Dotenv::createImmutable(__DIR__ . '/')->load();
 
 class DbConnect{
 
@@ -19,8 +21,8 @@ class DbConnect{
 
     protected function connect(){
 
-        $bdd = new PDO("mysql:host=$this->host;dbname=$this->dbname", "$this->user", "$this->password");
-        $bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);        
+        $bdd = new \PDO("mysql:host=$this->host;dbname=$this->dbname", "$this->user", "$this->password");
+        $bdd->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE,\PDO::FETCH_ASSOC);        
 
         return $bdd;
     }
